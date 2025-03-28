@@ -1,0 +1,3 @@
+data_path: "../data/X.csv"
+target_path: "../data/Y.csv"
+mlflow_tracking_uri: "http://localhost:5000"

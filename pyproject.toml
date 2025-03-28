@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools==69"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "ml-pipeline"
+description = "A pipeline for machine learning project"
+requires-python = "==3.11.0"
+version = "0.1.0"
+authors = [
+    {name = "littletree", email = "littletree@email.com"},
+]
+license = {text = "BSD-3-Clause"}
+readme = "README.md"
+dependencies = [
+    "pandas == 2.2.3",
+    "scikit-learn == 1.6.1",
+    "mlflow == 2.21.0"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "integration"]
+addopts = "-v -ra -q"
+log_cli = true
+log_cli_level = "INFO"
+log_format = "%(asctime)s %(levelname)s %(message)s"
+log_date_format = "%Y-%m-%d %H:%M:%S"
+minversion = "6.0"
+filterwarnings = "ignore"
+#norecursedirs = docs build
+
+# Specify a custom directory for pytest cache
+cache_dir = ".pytest_cache"
